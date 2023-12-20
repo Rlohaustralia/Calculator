@@ -17,7 +17,11 @@ public class Calculator {
         } else if (Objects.equals(operator, "*")){
             result = int1 * int2;
         } else if (Objects.equals(operator, "%")){
-            result = int1 / int2;
+            if (int2 != 0) {
+                result = int1 / int2;
+            } else {
+                System.out.println("Cannot divide by zero");
+            }
         }
         System.out.println("Result is : "+ result);
 
