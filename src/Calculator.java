@@ -3,13 +3,10 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    public static double int1;
-    public static double int2;
-    public static String operator;
-    public static double result;
+    private double result;
 
 
-    public static void Calculate (double int1, double int2, String operator) {
+    public void calculate (double int1, double int2, String operator) {
         if (Objects.equals(operator, "+")){
             result = int1 + int2;
         } else if (Objects.equals(operator, "-")){
@@ -32,18 +29,17 @@ public class Calculator {
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Please enter the first number: ");
-        int1 = keyboard.nextDouble();
+        double int1 = keyboard.nextDouble();
 
         System.out.println("Please choose the operator [ + , - , * , % ]");
-        operator = keyboard.next();
+        String operator = keyboard.next();
 
         System.out.println("Please enter the second number: ");
-        int2 = keyboard.nextDouble();
+        double int2 = keyboard.nextDouble();
 
         // Calculate the result
-        Calculator.Calculate(int1, int2, operator);
-
-
+        Calculator calculator = new Calculator();
+        calculator.calculate(int1, int2, operator);
 
     }
 }
